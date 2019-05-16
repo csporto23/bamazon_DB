@@ -21,6 +21,7 @@ connection.connect((err) => {
     console.log("connected")
     //table functions under here.
     inventory();
+    customerOrder();
 });
 
 function inventory() {
@@ -34,6 +35,33 @@ function inventory() {
            Item Price: ${res[i].price}
             `);
         }
-        
     });
+};
+
+function customerOrder() {
+        inquirer.prompt([
+            {
+                name: 'product_id',
+                type: 'input',
+                message: 'Whats the ID number of the item you would like to buy?'
+            },
+            {
+                name: 'product_amount',
+                type: 'input',
+                message: 'How many units of this item would you like?',
+                validate: (res) => {
+                    for (var i = 0; i < res.length; i++)
+                    if (res[i].stock_quantity > this.product_amount) {
+                        console.log('Insufficient quantity!')
+                        return false;
+                    } else return true;
+                }
+            }
+        ]).then((answer) => {
+            connection.query("SELECT * FROM products", [answer.product_amount, answer.product_name], (err, res) => {
+                for (var i = 0; i < res.length; i++){}
+
+        })
+
+        });
 };
