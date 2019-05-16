@@ -1,0 +1,11 @@
+item_id,product_name,department_name,price,stock_quantity
+1,Alexa,Technology,44.50,"40,000"
+2,"shark vacuum",Home,125.95,"8,000"
+3,"LED Candle",Home,8.00,"60,000"
+4,"Smart Bulb","Smart Home",24.99,"28,000"
+5,"Smart Fridge","Smart Home ",3251.89,"6,000"
+6,"Phone Charger","Bamazon Basics",5.99,"120,000"
+7,"USB Hub",Technology,54.99,"23,000"
+8,"Car Charger","Bamazon Basics",13.99,"65,000"
+9,"Ninja Turtle Toy",Toys,18.99,"18,000"
+10,"Mountain Bicycle","Outdoor Recreation",118.99,"12,000"

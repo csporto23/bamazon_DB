@@ -20,5 +20,20 @@ connection.connect((err) => {
     if(err) throw err;
     console.log("connected")
     //table functions under here.
-
+    inventory();
 });
+
+function inventory() {
+    connection.query('SELECT * FROM products', (err, res) => {
+        if (err) throw err;
+
+        for (var i = 0; i < res.length; i++){
+            console.log(`
+           Item Number: ${res[i].item_id}
+           Item Name: ${res[i].product_name}
+           Item Price: ${res[i].price}
+            `);
+        }
+        
+    });
+};
